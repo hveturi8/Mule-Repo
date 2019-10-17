@@ -145,7 +145,7 @@ var totalItemsOrdered = sum(payload.lineItems.*noOfItemsOrdered)
 			</ee:message>
 		</ee:transform>
 		<error-handler >
-			<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="0c4604dd-d5f9-4938-8601-08ef6a9e89eb" type="VALIDATION:MISMATCH">
+			<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="0c4604dd-d5f9-4938-8601-08ef6a9e89eb" type="ANY">
 				<ee:transform doc:name="Transform Message" doc:id="a4d3313f-b589-4cdc-baf6-1f8d8d7c69c3" >
 					<ee:message >
 						<ee:set-payload ><![CDATA[%dw 2.0
