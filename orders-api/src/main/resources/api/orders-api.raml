@@ -1,0 +1,44 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/7a32290e-92c4-425b-9e1e-44449154ff8a/ # 
+title: Orders-API
+version: v1
+mediaType: application/json
+
+/orders:
+  post:
+    description: Create a new order
+    body:
+      application/json:
+        type: !include datatype/order-request.raml
+        example: !include examples/order-request-example.raml
+    responses:
+      201:
+        description: CREATED
+        body:
+          application/json:
+            type: !include datatype/order-response.raml
+            example: !include examples/order-response-example.raml
+      400:
+        description: BAD REQUEST
+        body:
+          application/json:
+            type: object
+            properties:
+              statusCode: number
+              message: string
+            example:
+              {"statusCode":400,
+              "message":"The request could not be understood by the server due to malformed syntax"}
+      500:
+        description: INTERNAL ERROR
+        body:
+          application/json:
+            type: object
+            properties:
+              statusCode: number
+              message: string 
+            example:
+              {"statusCode": 500 ,
+                "message":"The server encountered an unexpected condition which prevented it from fulfilling the request."}
+          
+        

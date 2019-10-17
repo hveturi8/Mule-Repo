@@ -1,0 +1,12 @@
+#%RAML 1.0 DataType
+type: object
+properties:
+  userID: string
+  lineItems: 
+    type: array
+    items:
+      type: object
+      properties:
+        itemID: integer
+        description: string
+        noOfItemsOrdered: integer
